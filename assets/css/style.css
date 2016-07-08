@@ -1,0 +1,163 @@
+@font-face{
+	font-family: duoline;
+	src: url("../duo.ttf");
+}
+
+#container{
+	width: 100%;
+	background: #fefdf0;
+	height: 100%;
+}
+
+header{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+h1{
+	font-family: duoline;
+	font-size: 100px;
+	color: #56300d;
+	letter-spacing: 1.5px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 20px;
+
+}
+
+.italic{
+	font-style: italic;
+}
+
+
+
+#game-box{
+	box-sizing: border-box;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 5px solid #acbf26;
+	height: 400px;
+	background: #fafbf3;
+	font-family: 'Lato', sans-serif;
+	color: color: #f05a28;
+	margin-bottom: 200px;
+	outline: #038384 solid 5px;
+
+
+}
+
+#start-text{
+	color: #f05a28;
+	font-variant: small-caps;
+	text-align: center;
+}
+
+#score-box{
+	position: relative;
+	width: 40%;
+	border-top: 5px solid #56300d;  
+	border-left: 5px solid #56300d;  
+	border-bottom: 5px solid #56300d;
+	float: left;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+#display-score{
+	width: 70%;
+	box-sizing: border-box;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	font-family: 'Lato', sans-serif;
+	color: #f05a28;
+	font-weight: bold;
+}
+
+#wins{
+	width: 100%;
+	height: 30%;
+	float: top;
+	box-sizing: border-box;
+}
+
+#losses{
+	width: 100%;
+	height: 30%;
+	box-sizing: border-box;
+}
+
+#play-box{
+	width: 60%;
+	float: right;
+	border-top: 5px solid #56300d;
+	border-right: 5px solid #56300d;
+	border-bottom: 5px solid #56300d;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+#instruction-box{
+	width: 100%;
+	box-sizing: border-box;
+	height: 25%;
+	font-family: 'Lato', sans-serif;
+	color: #f05a28; 
+	text-align: center;
+}
+
+#array-box{
+	width: 100%;
+	box-sizing: border-box;
+	height: 25%;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	color: #f05a28;
+	font-weight: bold;
+}
+
+#remaining-guesses{
+	width: 100%;
+	box-sizing: border-box;
+	height: 25%;
+	font-family: 'Lato', sans-serif;
+	color: #f05a28;
+	font-weight: bold;
+}
+
+#letters-guessed-box{
+	width: 100%;
+	box-sizing: border-box;
+	height: 25%;
+	font-family: 'Lato', sans-serif;
+	color: #f05a28;
+	font-weight: bold;
+}
+
+
+#start-song{
+	background: #56300d;
+	font-family: duoline;
+	color: #fafbf3;
+	text-align: center;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40%;
+	line-height: 20px;
+	border: 2px solid #acbf26;
+}
+
+#music-button{
+	position: absolute;
+	bottom: 20px;
+	width: 65%;
+}
+
+
+	

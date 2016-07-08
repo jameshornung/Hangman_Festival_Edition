@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+	<title>Hangman</title>
+
+</head>
+<body>
+<div id="container">
+	<header>
+		<h1>Ha<span class="italic">n</span>gma<span class="italic">n</span></h1>
+	</header>
+
+		<section id="game-box">
+			<div id="score-box">
+				<div id="display-score">
+					<div id="wins">
+					</div>
+					<div id="losses">
+					</div>
+					<div id="music-button">
+						<audio id="moon-song" src="moon.mp3"></audio>
+						<button onclick="playMusic()" id="start-song">play music</button>
+					</div>
+				</div>
+			</div>
+			<div id="play-box">
+				<div id="instruction-box">
+					<p id="start-text">press any button to continue</p>
+				</div>
+				<div id="array-box">
+				</div>
+				<div id="remaining-guesses">
+				</div>
+				<div id="letters-guessed-box">
+				</div>
+			</div>
+		</section>
+
+	<footer>
+		<p>thanks for playing</p>
+	</footer>
+
+</div>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
