@@ -10,11 +10,12 @@
 }
 
 header{
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	width: 100%;
+	height: 152px;
+	background-image: url("../images/aclHeader.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 h1{
