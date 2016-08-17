@@ -1,19 +1,19 @@
 //Bands to be used in gameplay
 var bands = [
 {
-	name: 'cage the elephant',
+	name: 'CAGE THE ELEPHANT',
 	image: '../images/cage.jpg',
 	sound: 'examplepath',
 	bio: 'text'
 },
 {
-	name: 'willie nelson',
+	name: 'WILLIE NELSON',
 	image: '../images/findone.jpg',
 	sound: 'examplepath',
 	bio: 'text'
 },
 {
-	name: 'nothing but thieves',
+	name: 'NOTHING BUT THIEVES',
 	image: 'findit',
 	sound: 'findittoo',
 	bio: 'text'
