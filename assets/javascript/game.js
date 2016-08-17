@@ -12,9 +12,29 @@ var remainingGuesses = 8;
 var lettersGuessed = [];
 var letterGuessed;
 
+var notValid = document.getElementById('not-valid');
+var wrongAnswer = document.getElementById('wrong-answer');
+
 //Functions
 //==========================================================================
+function restartGame(){
+	currentWord;
+	currentWordArray = [];
+	arrayOfDashes =[];
+	originalDisplay;
+	updatedDisplay;
+	remainingGuesses = 8;
+	lettersGuessed = [];
+	letterGuessed;
 
+	getRandomWord();
+	$('#word-to-guess').html(originalDisplay);
+	$('#instruction-text').html("Guess a Letter");
+	$('#wins').html('Wins: ' + wins);
+	$('#losses').html('Losses: ' + losses);
+	$('#remaining-guesses').html('Guesses Remaining: ' + remainingGuesses);
+	$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
+}
 
 //selects a random word and assigns it to the global currentWord variable
 function getRandomWord(){
@@ -67,6 +87,15 @@ function startGame(){
 	$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
 }
 
+//Sound Effects----------------------------------
+function notValidEntry(){
+	notValid.play();
+}
+
+function incorrectGuess(){
+	wrongAnswer.play();
+}
+
 
 startGame();
 
@@ -78,25 +107,29 @@ document.onkeyup = function(e){
 	if(letterGuessed.match(validLetters)){
 		if(lettersGuessed.includes(letterGuessed)){
 			$('#instruction-text').html("You have already guessed that letter, try again.");
+			notValidEntry();
 		}
 		else{
 			lettersGuessed.push(letterGuessed);
+			$('#instruction-text').html('Correct!!! Guess another letter.');
 			$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
 
 			if(currentWordArray.includes(letterGuessed)){
 				updateDisplay(letterGuessed);
 				if(updatedDisplay === currentWord){
-					alert('you win!')
+					restartGame();
 					wins++;
 					$('#wins').html('Wins: ' + wins);
 				}
 			}
 			else{
+				incorrectGuess();
+				$('#instruction-text').html('Incorrect guess.  Try again.');
 				remainingGuesses--;
 				$('#remaining-guesses').html('Guesses Remaining: ' + remainingGuesses);
 				if(remainingGuesses === 0){
 					losses++;
-					alert('you lose');
+					restartGame();
 					$('#losses').html('Losses: ' + losses);
 				}
 			}
@@ -105,6 +138,7 @@ document.onkeyup = function(e){
 	}
 	else{
 		$('#instruction-text').html("Please Select a Valid Letter");
+		notValidEntry();
 	}
 };
 
