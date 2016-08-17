@@ -54,17 +54,17 @@ function updateDisplay(letter){
 		}
 	}
 	updatedDisplay = arrayOfDashes.join('');
-	$('#array-box').html(updatedDisplay);
+	$('#word-to-guess').html(updatedDisplay);
 }
 
 function startGame(){
 	getRandomWord();
-	$('#array-box').html(originalDisplay);
-	$('#start-text').html("Guess a Letter");
+	$('#word-to-guess').html(originalDisplay);
+	$('#instruction-text').html("Guess a Letter");
 	$('#wins').html('Wins: ' + wins);
 	$('#losses').html('Losses: ' + losses);
 	$('#remaining-guesses').html('Guesses Remaining: ' + remainingGuesses);
-	$('#letters-guessed-box').html('Letters Guessed: ' + lettersGuessed.join(' '));
+	$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
 }
 
 
@@ -77,11 +77,11 @@ document.onkeyup = function(e){
 	
 	if(letterGuessed.match(validLetters)){
 		if(lettersGuessed.includes(letterGuessed)){
-			$('#start-text').html("You have already guessed that letter, try again.");
+			$('#instruction-text').html("You have already guessed that letter, try again.");
 		}
 		else{
 			lettersGuessed.push(letterGuessed);
-			$('#letters-guessed-box').html('Letters Guessed: ' + lettersGuessed.join(' '));
+			$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
 
 			if(currentWordArray.includes(letterGuessed)){
 				updateDisplay(letterGuessed);
@@ -104,7 +104,7 @@ document.onkeyup = function(e){
 		}
 	}
 	else{
-		$('#start-text').html("Please Select a Valid Letter");
+		$('#instruction-text').html("Please Select a Valid Letter");
 	}
 };
 
