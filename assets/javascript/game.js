@@ -11,9 +11,15 @@ var wordsPlayed = [];
 var remainingGuesses = 8;
 var lettersGuessed = [];
 var letterGuessed;
+var bandPic;
+var bandBio;
 
 var notValid = document.getElementById('not-valid');
 var wrongAnswer = document.getElementById('wrong-answer');
+var correctAnswer = document.getElementById('correct-answer');
+var winner = document.getElementById('victory');
+
+$('#band-image').html(bandPic);
 
 //Functions
 //==========================================================================
@@ -41,6 +47,9 @@ function getRandomWord(){
 	x = Math.floor(Math.random() * bands.length);
 	currentWord = bands[x].name;
 	currentWordArray = currentWord.split('');
+	bandBio = bands[x].bio;
+	bandPic = "<img id='band-pic' src='" + bands[x].image + "'>";
+
 	if(wordsPlayed.includes(currentWord)){
 		getRandomWord();
 	}
@@ -96,6 +105,14 @@ function incorrectGuess(){
 	wrongAnswer.play();
 }
 
+function correctGuess(){
+	correctAnswer.play();
+}
+
+function youWin(){
+	winner.play();
+}
+
 
 startGame();
 
@@ -116,7 +133,11 @@ document.onkeyup = function(e){
 
 			if(currentWordArray.includes(letterGuessed)){
 				updateDisplay(letterGuessed);
+				correctGuess();
 				if(updatedDisplay === currentWord){
+					$('#band-bio').html(bandBio);
+					$('#band-image').html(bandPic);
+					youWin();
 					restartGame();
 					wins++;
 					$('#wins').html('Wins: ' + wins);

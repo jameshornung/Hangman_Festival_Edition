@@ -4,10 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
 	<title>Hangman</title>
 
@@ -23,7 +20,6 @@
 		</div>
 	</header>
 	<div id="game-section">
-		<!-- <h1 id="title">Ha<span class="italic">n</span>gma<span class="italic">n</span></h1> -->
 		<section id="game-box">
 			<div id="score-box">
 				<div id="display-score">
@@ -31,6 +27,9 @@
 					</div>
 					<div id="losses">
 					</div>
+				</div>
+				<div id="band-image">
+					<img id="band-pic" src="assets/images/aclLogo.jpg">
 				</div>
 			</div>
 			<div id="play-box">
@@ -48,19 +47,23 @@
 	</div>
 	<div id="result-section">
 		<aside id="result-box">
-			<div id="band-pic">
-			</div>
-			<div id="band-bio">
+			<div id="fixed-border">
+				<div id="band-bio">
+					<img id="starting-logo" src="assets/images/aclAltLogo.jpg">
+				</div>
 			</div>
 		</aside>
 	</div>
 	<footer>
-		<p>thanks for playing</p>
+		<p>Hangman ACL Fest 2016 Edition</p>
+		<p>Created By: James Hornung</p>
 	</footer>
 
 </div>
 <audio id="not-valid" src="assets/sounds/duplicate.mp3" type="audio/mpeg"></audio>
 <audio id="wrong-answer" src="assets/sounds/wrong.mp3" type="audio/mpeg"></audio>
+<audio id="correct-answer" src="assets/sounds/success.mp3" type="audio/mpeg"></audio>
+<audio id="victory" src="assets/sounds/cheers.mp3" type="audio/mpeg"></audio>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/bands.js"></script>
