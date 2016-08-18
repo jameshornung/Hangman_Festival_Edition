@@ -4,8 +4,11 @@
 	background: #fefdf0;
 	height: 100%;
 	overflow: auto;
+	font-family: arial, helvetica, sans-serif;
+	color: #56300d;
 }
 
+/*Banner and Heading====================================*/
 #banner{
 	width: 100%;
 	height: 152px;
@@ -17,39 +20,29 @@
 
 #turqoise-bar{
 	background-color: rgb(0,149,120);
-	height: 35px;
+	height: 15px;
 	width: 100%;
 }
 
 #green-bar{
 	background-color: rgb(172,192,54);
-	height: 35px;
+	height: 25px;
 	width: 100%;
 }
 
-#title{
-	font-family: duoline;
-	font-size: 80px;
-	height: 125px;
-	line-height: 125px;
-	color: #56300d;
-	letter-spacing: .5px;
-	text-align: center;
-}
+/*GAMEPLAY AREA==========================================*/
 
-.italic{
-	font-style: italic;
-}
-
+/*container*/
 #game-section{
 	box-sizing: border-box;
 	width: 50%;
-	margin-left: 100px;
+	margin-left: 70px;
+	margin-top: 50px;
+	margin-bottom: 75px;
 	float: left;
 }
 
-
-
+/*container for wins & losses & band image*/
 #game-box{
 	box-sizing: border-box;
 	width: 100%;
@@ -57,21 +50,12 @@
 	height: 325px;
 	background: #fafbf3;
 	color: color: #f05a28;
-	margin-bottom: 200px;
 	outline: #038384 solid 5px;
-	margin-top: 70px;
-
-
 }
 
-#instruction-text{
-	color: #f05a28;
-	font-variant: small-caps;
-	text-align: center;
-	padding-top: 15px;
-	font-size: 25px;
-}
+/*------------------------------------------*/
 
+/*display overall wins and losses*/
 #score-box{
 	position: relative;
 	width: 40%;
@@ -90,15 +74,7 @@
 	height: 25%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10%;
-	font-family: 'Lato', sans-serif;
-	color: #f05a28;
-	font-weight: bold;
-}
-
-#band-image{
-	height: 75%;
-	text-align: center;
+	margin-top: 20px;
 }
 
 #wins{
@@ -114,6 +90,23 @@
 	box-sizing: border-box;
 }
 
+/*div to hold image of band*/
+#band-image{
+	height: 75%;
+	text-align: center;
+}
+
+/*dynamically generated band pic*/
+#band-pic{
+	width: 85%;
+	border: 1px solid gray;
+	object-position: 50% 50%;
+	object-fit: contain;
+}
+
+/*------------------------------------------*/
+
+/*container for instructions & word to guess & letters guessed*/
 #play-box{
 	width: 60%;
 	float: right;
@@ -124,13 +117,24 @@
 	box-sizing: border-box;
 }
 
+/*------------------------------------------*/
+
 #instruction-box{
 	width: 100%;
 	box-sizing: border-box;
 	height: 25%;
-	font-family: 'Lato', sans-serif;
 	color: #f05a28; 
 	text-align: center;
+	font-family: 'arial black';
+	font-weight: bold;
+}
+
+#instruction-text{
+	color: #f05a28;
+	font-variant: small-caps;
+	text-align: center;
+	padding-top: 15px;
+	font-size: 25px;
 }
 
 #word-to-guess{
@@ -139,39 +143,32 @@
 	height: 25%;
 	text-align: center;
 	letter-spacing: 8px;
-	font-family: 'Lato', sans-serif;
-	color: #f05a28;
-	font-weight: bold;
+	padding-top: 30px;
 }
 
 #remaining-guesses{
 	width: 100%;
 	box-sizing: border-box;
 	height: 25%;
-	font-family: 'Lato', sans-serif;
-	color: #f05a28;
-	font-weight: bold;
+	padding-top: 20px;
 }
 
 #letters-guessed{
 	width: 100%;
 	box-sizing: border-box;
 	height: 25%;
-	font-family: 'Lato', sans-serif;
-	color: #f05a28;
-	font-weight: bold;
 }
 
-#starting-logo{
-	width: 100%;
-}
+/*BAND BIOGRAPHY AREA======================================*/
 
+/*container to hold  bio*/
 #result-section{
 	box-sizing: border-box;
-	width: 25%;
-	margin-right: 100px;
+	width: 30%;
 	float: right;
-	
+	margin-right: 70px;
+	margin-bottom: 75px;
+	margin-top: 50px;
 }
 
 #result-box{
@@ -181,10 +178,8 @@
 	height: 325px;
 	background: #fafbf3;
 	color: color: #f05a28;
-	margin-bottom: 200px;
 	outline: #038384 solid 5px;
-	margin-top: 70px;
-	overflow: scroll;
+	/*overflow: scroll;*/
 }
 
 #fixed-border{
@@ -194,20 +189,23 @@
 	border-right: 5px solid #56300d;
 	border-left: 5px solid #56300d;
 	box-sizing: border-box;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
+#starting-logo{
+	width: 100%;
+}
+
+/*dynamically generated band biography*/
 #band-bio{
 	height: 100%;
 	box-sizing: border-box;
-	padding: 15px;
-	color: ;
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-right: 2px;
 }
 
-#band-pic{
-	width: 70%;
-	text-align: center;
-}
+/*==========================================================*/
 
 footer{
 	width: 100%;
@@ -215,6 +213,7 @@ footer{
 	float: left;
 	text-align: center;
 	color: gray;
+	opacity: 0.3;
 }
 
 	

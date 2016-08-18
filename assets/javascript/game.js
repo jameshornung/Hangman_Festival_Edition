@@ -2,47 +2,34 @@
 //==========================================================================
 var wins = 0;
 var losses = 0;
+
+//tracks all played words to prevent duplicates in a session
+var wordsPlayed = [];
+
+// variables to be reset for new gameplay
 var currentWord;
 var currentWordArray = [];
 var arrayOfDashes =[];
-var originalDisplay;
-var updatedDisplay;
-var wordsPlayed = [];
 var remainingGuesses = 8;
 var lettersGuessed = [];
+
+// empty variables needing a global scope
+var originalDisplay;
+var updatedDisplay;
 var letterGuessed;
 var bandPic;
 var bandBio;
 
+//Audio
 var notValid = document.getElementById('not-valid');
 var wrongAnswer = document.getElementById('wrong-answer');
 var correctAnswer = document.getElementById('correct-answer');
 var winner = document.getElementById('victory');
 
-$('#band-image').html(bandPic);
-
 //Functions
 //==========================================================================
-function restartGame(){
-	currentWord;
-	currentWordArray = [];
-	arrayOfDashes =[];
-	originalDisplay;
-	updatedDisplay;
-	remainingGuesses = 8;
-	lettersGuessed = [];
-	letterGuessed;
 
-	getRandomWord();
-	$('#word-to-guess').html(originalDisplay);
-	$('#instruction-text').html("Guess a Letter");
-	$('#wins').html('Wins: ' + wins);
-	$('#losses').html('Losses: ' + losses);
-	$('#remaining-guesses').html('Guesses Remaining: ' + remainingGuesses);
-	$('#letters-guessed').html('Letters Guessed: ' + lettersGuessed.join(' '));
-}
-
-//selects a random word and assigns it to the global currentWord variable
+//selects a random word and assigns it to currentWord variable
 function getRandomWord(){
 	x = Math.floor(Math.random() * bands.length);
 	currentWord = bands[x].name;
@@ -75,7 +62,7 @@ function displayAsDashes(word){
 	}
 };
 
-//update the display to show actual letter for letters guessed and dashes for letters remaining
+//inserts guessed letter into the display
 function updateDisplay(letter){
 	for(i=0;i<currentWordArray.length;i++){
 		if(currentWordArray[i] === letter){
@@ -87,6 +74,16 @@ function updateDisplay(letter){
 }
 
 function startGame(){
+	currentWord;
+	currentWordArray = [];
+	arrayOfDashes =[];
+	remainingGuesses = 8;
+	lettersGuessed = [];
+
+	// var originalDisplay;
+	var updatedDisplay;
+	var letterGuessed;
+
 	getRandomWord();
 	$('#word-to-guess').html(originalDisplay);
 	$('#instruction-text').html("Guess a Letter");
@@ -113,6 +110,7 @@ function youWin(){
 	winner.play();
 }
 
+//GAMEPLAY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 startGame();
 
@@ -138,9 +136,10 @@ document.onkeyup = function(e){
 					$('#band-bio').html(bandBio);
 					$('#band-image').html(bandPic);
 					youWin();
-					restartGame();
 					wins++;
 					$('#wins').html('Wins: ' + wins);
+					$('#instruction-text').html("Congratulations! You Win!");
+					setTimeout(startGame, 5000);
 				}
 			}
 			else{
@@ -150,8 +149,9 @@ document.onkeyup = function(e){
 				$('#remaining-guesses').html('Guesses Remaining: ' + remainingGuesses);
 				if(remainingGuesses === 0){
 					losses++;
-					restartGame();
+					$('#instruction-text').html('The correct answer was ' + currentWord);
 					$('#losses').html('Losses: ' + losses);
+					setTimeout(startGame, 5000);
 				}
 			}
 
