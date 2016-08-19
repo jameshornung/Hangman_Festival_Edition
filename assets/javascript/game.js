@@ -114,7 +114,7 @@ function youWin(){
 
 startGame();
 
-document.onkeyup = function(e){
+document.onkeyup = function(event){
 	var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
 	var validLetters = /^[A-Z]+$/;
 	
