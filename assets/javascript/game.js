@@ -139,7 +139,12 @@ document.onkeyup = function(e){
 					wins++;
 					$('#wins').html('Wins: ' + wins);
 					$('#instruction-text').html("Congratulations! You Win!");
-					setTimeout(startGame, 5000);
+						if(wordsPlayed.length === bands.length){
+							$('#instruction-text').html("Game Over");
+						}
+						else{
+							setTimeout(startGame, 5000);
+						}
 				}
 			}
 			else{
@@ -151,7 +156,14 @@ document.onkeyup = function(e){
 					losses++;
 					$('#instruction-text').html('The correct answer was ' + currentWord);
 					$('#losses').html('Losses: ' + losses);
-					setTimeout(startGame, 5000);
+					$('#band-bio').html(bandBio);
+					$('#band-image').html(bandPic);
+						if(wordsPlayed.length === bands.length){
+							$('#instruction-text').html("Game Over");
+						}
+						else{
+							setTimeout(startGame, 5000);
+						}
 				}
 			}
 
