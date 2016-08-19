@@ -94,14 +94,13 @@
 #band-image{
 	height: 75%;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 /*dynamically generated band pic*/
 #band-pic{
 	width: 85%;
 	border: 1px solid gray;
-	object-position: 50% 50%;
-	object-fit: contain;
 }
 
 /*------------------------------------------*/
