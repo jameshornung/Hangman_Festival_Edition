@@ -176,13 +176,3 @@ document.onkeyup = function(event){
 };
 
 
-
-
-
-
-// getRandomWord();
-// console.log(currentWord);
-// displayAsDashes(currentWord);
-// console.log(originalDisplay);
-// updateDisplay('e');
-// console.log(updatedDisplay);
